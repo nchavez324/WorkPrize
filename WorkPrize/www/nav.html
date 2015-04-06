@@ -1,80 +1,48 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<html>
 
-	<head>
-	<meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-		 <link rel="stylesheet" type="text/css" href="css/burger.css" />
-		 	
+<html lang="en">
 
+<head>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<meta charset="utf-8">
 
-	</head>
+<title>Responsive Header Nav</title>
 
-	<header>
-<a href="#menu" id="toggle"><span></span></a>
+<meta name="description" content="Responsive Header Nav">
 
-<div id="menu">
-  <ul>
-    <li><a href="#">Feed</a></li>
-    <li><a href="#">Statistics</a></li>
-    <li><a href="#">Account</a></li>
-  </ul>
-</div>
+<meta name="author" content="Treehouse">
 
-<span class = "fui-plus-circle"> </span>
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
-	</header>
+<link rel="stylesheet" href="css/burger.css">
 
-	<script>
-var theToggle = document.getElementById('toggle');
+</head>
 
-// based on Todd Motto functions
-// http://toddmotto.com/labs/reusable-js/
+<body>
 
-// hasClass
-function hasClass(elem, className) {
-	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-}
-// addClass
-function addClass(elem, className) {
-    if (!hasClass(elem, className)) {
-    	elem.className += ' ' + className;
-    }
-}
-// removeClass
-function removeClass(elem, className) {
-	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
-	if (hasClass(elem, className)) {
-        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
-            newClass = newClass.replace(' ' + className + ' ', ' ');
-        }
-        elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    }
-}
-// toggleClass
-function toggleClass(elem, className) {
-	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
-    if (hasClass(elem, className)) {
-        while (newClass.indexOf(" " + className + " ") >= 0 ) {
-            newClass = newClass.replace( " " + className + " " , " " );
-        }
-        elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    } else {
-        elem.className += ' ' + className;
-    }
-}
+<header>
 
-theToggle.onclick = function() {
-   toggleClass(this, 'on');
-   return false;
-}
-	</script> 
+<a href="#" id="logo"></a>
 
+<nav>
+
+<a href="#" id="menu-icon"></a>
+
+<ul>
+
+<li><a href="#" class="current">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Work</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+</body>
 
 </html>
