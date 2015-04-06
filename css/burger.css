@@ -46,9 +46,9 @@ header {
   float: right;
   background: url(../img/marketing8.svg) no-repeat center;
   display: inline-block;
-height: 50px;
-width: 50px;
-padding: 20px 0 0 20px;
+  height: 50px;
+  width: 50px;
+  padding: 20px 0 0 20px;
   -webkit-filter: invert(100%); 
 
 
@@ -139,12 +139,5 @@ li {
 
     position: absolute;
 
-  }
-
-
-
-
-
-
-  
-  }
+  }  
+}
