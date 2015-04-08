@@ -1,0 +1,24 @@
+.center-div {
+
+  margin: 0 auto;
+  margin-left:auto;
+	margin-right:auto;
+	align:center;
+	text-align:center;
+
+	background-color: black;
+
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.center-text {
+
+	margin: 0 auto;
+	margin-left:auto;
+	margin-right:auto;
+	align:center;
+	text-align:center;
+
+	color: white;
+}
