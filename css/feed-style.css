@@ -49,3 +49,10 @@
 	text-align: center;
 	padding-top: 5px;
 }
+
+.center-wrapper{
+  text-align: center;
+}
+.center-wrapper * {
+  margin: 0 auto;
+}
