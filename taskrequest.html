@@ -1,159 +1,122 @@
+<!doctype html>
 <html>
-    <head>
+<head>
+    <title>jQuery Tutorial</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/feed-style.css">
 
     <link href="http://code.jquery.com/mobile/latest/jquery.mobile.css" rel="stylesheet" type="text/css" />
     <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/latest/jquery.mobile.js"></script>
-    <link rel="stylesheet" href="css/feed-style.css">
-    
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/flat-ui.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <script src="lib/sweet-alert.min.js"></script> <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
-        <title>Work Prize</title>
-        <style> 
-            body {
-               color: #53585F;
-               margin-bottom: 30px;
-               font-size: 20px;
-               font-weight: 300;
-               line-height: 1.46428571;
-            }
-            p {             
-              margin-bottom: 30px;
-              font-size: 20px;
-              font-weight: 300;
-              line-height: 1.46428571;
-  
-            }
-            .profile {
-                border-radius: 50%;
-                float: left;
-                padding-left: 5%;
-                padding-right: 5%;
-                margin-left: 10%;
-                margin-right: 5%;
-            }
-            .col-xs-3 {
-                margin-left: 2%;
 
-            }
-            .left{
-                margin-left: 2%;
-            }
-            .center {
-                text-align: center;
-            }
-            .left-more {
-                margin-left: 4%;
-            }
-            .add-task {
-                  font-family: inherit;
-                  font-weight: 700;
-                  line-height: 1.1;
-                  color: inherit;
-                  font-size: 200%;
+    <style>
+    #header {
+        background: #f9f9f9; /*{*c-bup-background-color};*/
+        border:none;
+        padding-left: 45%;
+    }
+    #top-padding {
+        padding-top: 50px;
+        border: none;
+    }
+   .ui-body-c {
+        text-align: center;
+    }
+    #center-pic {
+        margin-left: 22%;
+    }
 
-            }
-/*arrow color: cbcbcb 
-#f9f9f9 */
-            div.item {
-                border: 3px solid #f9f9f9;
-                border-radius: 0;
-                border-left: none;
-                border-right:none;
-                border-bottom: none;
-                margin-bottom: 0px;
-                background-color: white;
-                text-align: left;
-                margin-left:4%;
-            }
-            div.item:first-child {
-                border-bottom: none;
-                border-top: 2px solid #f9f9f9;
-            }
+    </style>
+</head>
 
-            .row {
-                margin-right: -20px;
-            }
-            .right {
-                
-                float: right;
-                padding-top: 50px;
-                padding-right: 2%;
-            }
-            
-        </style>
-    </head>
-    <body>
-        <div class="app">
-            <!-- nav starts here -->
-            <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
-            <div class="navbar-header">
-                <br/ class="space">
-                <a class="navbar-brand" href="#"> Work Prize </a>
-            
-            </div><!-- /.navbar-collapse -->
-          </nav>
-            <!-- nav ends here -->
-            <div>
+<body>
+    <div data-role="page" id="feed-page">
+ 
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h1>Work Prize</h1>
+            <a href="taskdetail.html" data-role="button" data-icon="bars" data-theme="c">Menu</a>
+            <a href="taskrequest.html" data-role="button" data-icon="edit" data-theme="c">New Task</a>
+        </div><!-- /header -->
 
-            
+        <div>
 
-            
-            <div id="content">
-              <img src="img/girl.jpeg" alt="Jane Doe" class="profile">
-              <h3 class="demo-panel-title left"> work with Jane</h3>
-              <p> SW Project Draft <br/>
-                  By 11:59 pm, tonight <br/>
-                  ~ 4 hrs 
-              </p>
-
-            </div>
-            <div id="deviceready" class="blink">
-                <br>
-                <p class="lead left-more center">Pick your own work to do meanwhile! </p>
-                <!--<p class="event listening"> Work with Andrew!</p> -->
-                <a href="#" class="add-task left-more"> <span class="fui-plus"></span> New Task...</a>
-                <br/>
-                <br/>
-                <!-- attempted demo -->
-                <div>
-                    <!-- task 1 -->
-                    <a href="#" class="add-task right"> <span class="fui-arrow-right"></span>  </a>
-                    <div class="item">
-                        <!-- <img src="img/icons/svg/compas.svg" alt="Compas" class="tile-image big-illustration"> -->
-                        <br />
-                        <div class="left">
-                        <h3 class="tile-title">Animation Work </h3>
-                        <p> By 3pm, tomorrow <br/> ~ 3 hrs</p>
-                        
-                        </div>     
+            <ul data-role="listview" id="top-padding">
+              
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child" id="header">
+                    <!-- face, available -->
+                    <div class="item-user-face" id="center-pic">
+                        <img src="img/user/face-0.png" class="user-face">
+                        <div class="user-avail">
+                            <p>Avail.</p>
+                        </div>
                     </div>
+                    <!-- text -->
+                    <div class="item-info">
+                        <div class="icon-container">
+                            <img src="img/icons/favorite-star.png" class="icon-token">
+                        </div>
+                        <div class="item-text">
+                            <h1>Andrew Mauboussin</h1>
+                            <p>By <span class="bold">11:59 PM</span>, tonight</p>
+                            <p>~ <span class="bold">4 hrs</span></p>
+                            <p>SW Project Draft</p>
+                        </div>
+                    </div>
+                </li>
 
-                    <!-- task 2 -->
-                    <a href="#" class="add-task right"> <span class="fui-arrow-right"></span>  </a>
-                    <div class="item">
-                    <!-- <img src="img/icons/svg/compas.svg" alt="Compas" class="tile-image big-illustration"> -->
-                    <br />
-                    <div class="left">
-                    <h3 class="tile-title"> 179 Pset </h3>
-                    <p> By 3pm, Wednesd <br/> ~ 4.5 hrs</p>
-                    
-                    </div>
-                    </div>
-                    
-                    
-                </div>
+            </ul>
+
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        
+        <br/> <br/>
+        <p class="center">Pick your own work to do meanwhile! </p>
+        <br/> 
+        <a href="alerts.html" class="add-task left-more"> <span class="fui-plus"></span> + New Task...</a>
+        <br/> <br/>
+        <div>
+             <ul data-role="listview" id="feed-listview" class="ui-listview ui-shadow">
 
-    </body>
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                    <!-- face, available -->
+                    <div class="item-user-face">
+                        <img src="img/icons/png/test.png" class="user-face">
+                    </div>
+                    <!-- text -->
+                    <div class="item-info">
+                        <div class="icon-container">
+                        </div>
+                        <div class="item-text">
+                            <h1>Study for midterm</h1>
+                            <p>By <span class="bold">3:00 PM</span>, next Wednesday</p>
+                            <p>~ <span class="bold">6 hrs</span></p>
+                            
+                        </div>
+                    </div>
+                </a></li>
 
-    
-    
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                    <!-- face, available -->
+                    <div class="item-user-face">
+                        <img src="img/icons/png/money.png" class="user-face">
+                    </div>
+                    <!-- text -->
+                    <div class="item-info">
+                        <div class="icon-container">
+                        </div>
+                        <div class="item-text">
+                            <h1> Apply for summer jobs</h1>
+                            <p>By <span class="bold">10:00 PM</span>, Sunday</p>
+                            <p>~ <span class="bold">4 hrs</span></p>
+                            
+                        </div>
+                    </div>
+                </a></li>
+
+               
+
+            </ul>
+        </div>
+ 
+    </div><!-- /page -->
+
+</body>
 </html>

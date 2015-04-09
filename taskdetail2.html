@@ -21,39 +21,9 @@
     </script>
 
     <script src="js/jquery.placepicker.js"></script>
+     <script src="js/taskdetail.js"></script>
 
-    <script>
-
-      $(document).ready(function() {
-        $("#rewardtiles").hide();
-        // Basic usage
-        $(".placepicker").placepicker();
-
-        // Advanced usage
-        $("#advanced-placepicker").each(function() {
-          var target = this;
-          var $collapse = $(this).parents('.form-group').next('.collapse');
-          var $map = $collapse.find('.another-map-class');
-
-          var placepicker = $(this).placepicker({
-            map: $map.get(0),
-            placeChanged: function(place) {
-              console.log("place changed: ", place.formatted_address, this.getLocation());
-            }
-          }).data('placepicker');
-        });
-
-      }); // END document.ready
-
-    </script>
-
-    <script>
-    function openReward() {
-        $("#rewardtiles").toggle();
-    }
-    </script>
-
-
+    <!-- this is only in file because jQuery doesn't seem to reload css -->
     <style>
     #header {
         background: #f9f9f9; /*{*c-bup-background-color};*/
@@ -119,7 +89,7 @@
         <br/> <br/>
         <p class="center"> Talk to Andrew to set up goals, timing, and rewards! Get pumped!</p>
         <br/> 
-        <a href="alerts.html" class="add-task left-more"> <span class="fui-plus"></span> + New Task...</a>
+        <a href="index.html" class="add-task left-more"> <span class="fui-plus"></span> + New Task...</a>
         <br/> <br/>
         <div>
              <ul data-role="listview" id="feed-listview" class="ui-listview ui-shadow">
@@ -210,27 +180,8 @@
                 <div class="ui-bar ui-bar-a" style="height:30px"> Ice cream </div></div>
             </a>
         </div><!-- /grid-c -->
-
-        <script>
-        function Cookies() {
-            $("#rewardtiles").toggle();
-            $("#possiblereward").val("Cookie");
-        }
-        function Tea() {
-            $("#rewardtiles").toggle();
-            $("#possiblereward").val("Tea");
-        }
-        function Massage() {
-            $("#rewardtiles").toggle();
-            $("#possiblereward").val("Massage");
-        }
-        function iceCream() {
-            $("#rewardtiles").toggle();
-            $("#possiblereward").val("Ice cream");
-        }
-        </script>
-        <form action="alerts.html">
-        <input type="submit" value="Create Task" onclick=""/>
+        <form action="index.html">
+        <input type="submit" value="Create Task" />
         </form>
     </div><!-- /page -->
 

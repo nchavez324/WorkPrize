@@ -1,204 +1,16 @@
+<!doctype html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <title>jQuery Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/feed-style.css">
 
     <link href="http://code.jquery.com/mobile/latest/jquery.mobile.css" rel="stylesheet" type="text/css" />
     <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/latest/jquery.mobile.js"></script>
-    
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/flat-ui.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" id="iphone-viewport" content="minimum-scale=1.0, maximum-scale=1.0, width=device-width" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
 
-		<link rel="stylesheet" href="css/spinningwheel.css" type="text/css" media="all" />
-		<script type="text/javascript" src="js/spinningwheel-min.js?v=1.4"></script>
-
-		<script type="text/javascript">
-		function openBirthDate() {
-			var now = new Date();
-			var days = { };
-			var years = { };
-			var months = { 1: 'Gen', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'Jun', 7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Oct', 11: 'Nov', 12: 'Dec' };
-			
-			for( var i = 1; i < 32; i += 1 ) {
-				days[i] = i;
-			}
-
-			for( i = now.getFullYear()-100; i < now.getFullYear()+1; i += 1 ) {
-				years[i] = i;
-			}
-
-			SpinningWheel.addSlot(years, 'right', 1999);
-			SpinningWheel.addSlot(months, '', 4);
-			SpinningWheel.addSlot(days, 'right', 12);
-			
-			SpinningWheel.setCancelAction(cancel);
-			SpinningWheel.setDoneAction(done);
-			
-			SpinningWheel.open();
-		}
-
-
-		function done() {
-			var results = SpinningWheel.getSelectedValues();
-			document.getElementById('result').innerHTML = 'values: ' + results.values.join(' ') + '<br />keys: ' + results.keys.join(', ');
-		}
-
-		function cancel() {
-			document.getElementById('result').innerHTML = 'cancelled!';
-		}
-
-
-		window.addEventListener('load', function(){ setTimeout(function(){ window.scrollTo(0,0); }, 100); }, true);
-
-		</script>
-
-
-		<style type="text/css">
-		</style>
-
-        <title>Work Prize</title>
-        <style> 
-            body {
-               color: #53585F;
-               margin-bottom: 30px;
-               font-size: 20px;
-               font-weight: 300;
-               line-height: 1.46428571;
-            }
-            p {             
-              margin-bottom: 30px;
-              font-size: 20px;
-              font-weight: 300;
-              line-height: 1.46428571;
-  
-            }
-            .profile {
-                border-radius: 50%;
-                float: left;
-                padding-left: 5%;
-                padding-right: 5%;
-                margin-left: 10%;
-                margin-right: 5%;
-            }
-            .col-xs-3 {
-                margin-left: 2%;
-
-            }
-            .left{
-                margin-left: 2%;
-            }
-            .center {
-                text-align: center;
-            }
-            .left-more {
-                margin-left: 4%;
-            }
-            .add-task {
-                  font-family: inherit;
-                  font-weight: 700;
-                  line-height: 1.1;
-                  color: inherit;
-                  font-size: 200%;
-
-            }
-/*arrow color: cbcbcb 
-#f9f9f9 */
-            div.item {
-                border: 3px solid #f9f9f9;
-                border-radius: 0;
-                border-left: none;
-                border-right:none;
-                border-bottom: none;
-                margin-bottom: 0px;
-                background-color: white;
-                text-align: left;
-                margin-left:4%;
-            }
-            div.item:first-child {
-                border-bottom: none;
-                border-top: 2px solid #f9f9f9;
-            }
-
-            .row {
-                margin-right: -20px;
-            }
-            .right {
-                
-                float: right;
-                padding-top: 50px;
-                padding-right: 2%;
-            }
-            input[type="text"] {
-            	height: 50px;
-            	width: 370px;
-            	margin-top: -130px;
-            }
-            .input-right {
-            	float:right;
-            	height:100px;
-            }
-            input {
-            	width: 370px;
-            	margin-top: -50px;
-            	margin-right: 20px
-            }
-
-            /* adding location */ 
-            .placepicker-map {
-		        width: 100%;
-		        height: 300px;
-		    }
-
-		    .another-map-class {
-		        width: 100%;
-		        height: 300px;
-		    }
-
-		    .space {
-		    	margin-top: 20px;
-		    }
-
-		    /* reformatting location */
-		    .input-group .form-control {
-			  
-			  width: 87%;
-			  background-color: #ffffff;
-			  border: 1px solid #cccccc;
-			  
-			}
-
-			.input-long {
-				width: 87%;
-			  background-color: #ffffff;
-			  border: 1px solid #cccccc;
-			  margin-left: 7%;
-			  margin-top: 1%;
-			}
-
-			.thumbnail {
-				position: absolute;
-				right: 5px;
-				top: 5px;
-			}
-
-			button {
-				  margin-left: 27;
-				  margin-top: -50px;
-			}
-			
-        </style>
-
-        <!-- for location -->
+    <!-- google maps -->
+    !-- for location -->
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     
@@ -209,140 +21,169 @@
     </script>
 
     <script src="js/jquery.placepicker.js"></script>
+     <script src="js/taskdetail.js"></script>
 
-    <script>
-
-      $(document).ready(function() {
-
-        // Basic usage
-        $(".placepicker").placepicker();
-
-        // Advanced usage
-        $("#advanced-placepicker").each(function() {
-          var target = this;
-          var $collapse = $(this).parents('.form-group').next('.collapse');
-          var $map = $collapse.find('.another-map-class');
-
-          var placepicker = $(this).placepicker({
-            map: $map.get(0),
-            placeChanged: function(place) {
-              console.log("place changed: ", place.formatted_address, this.getLocation());
-            }
-          }).data('placepicker');
-        });
-
-      }); // END document.ready
-
-    </script>
-
+    <!-- this is only in file because jQuery doesn't seem to reload css -->
     <style>
-    input-group-btn:first-child > .btn {
-			  margin-top: -50px;
-			  
-			}
-    </style>
-    </head>
-    <body>
-        <div class="app">
-            <!-- nav starts here -->
-            <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
-            <div class="navbar-header">
-                <br/ class="space">
-                <a class="navbar-brand" href="#"> Work Prize </a>
-            
-            </div><!-- /.navbar-collapse -->
-          </nav>
-            <!-- nav ends here -->
-            <div>
+    #header {
+        background: #f9f9f9; /*{*c-bup-background-color};*/
+        border:none;
+        padding-left: 45%;
+    }
+    #top-padding {
+        padding-top: 50px;
+        border: none;
+    }
+   .ui-body-c {
+        text-align: center;
+    }
+    #center-pic {
+        margin-left: 22%;
+    }
+    #textbox-icon {
+        position:absolute;
+        right:15px;
+        top:10px;
+    }
+    
+    .hide {
+ 
+        background-image: linear-gradient( #fff , #f1f1f1 );
+        background-image: linear-gradient( #f9f9f9 , #eee );
+          border: 1px solid #ccc ;
+        font-weight: bold;
+        color: #222 ;
+    text-shadow: none;
+    }
+    .ui-bar-a { 
+        background-image: linear-gradient( #fff, #f1f1f1 );
 
-            <div>
-                <br>
-                <p class="lead left-more center"> Talk to Jane to set up goals, timing, and rewards! Get pumped! </p>
-                <!--<p class="event listening"> Work with Andrew!</p> -->
-                <a href="#" class="add-task left-more"> <span class="fui-plus"></span> New Task...</a>
-                <br/>
-                <br/>
-                <!-- attempted demo -->
-                <div>
-                    <!-- task 1 -->
-                    <a href="#" class="add-task right"> <span class="fui-arrow-right"></span>  </a>
-                    <div class="item">
-                        <!-- <img src="img/icons/svg/compas.svg" alt="Compas" class="tile-image big-illustration"> -->
-                        <br />
-                        <div class="left">
-                        <h3 class="tile-title">Animation Work </h3>
-                        <p> By 3pm, tomorrow <br/> ~ 3 hrs</p>
-                        
-                        </div>     
-                    </div>
-
-                    <!-- task 2 -->
-                    <a href="#" class="add-task right"> <span class="fui-arrow-right"></span>  </a>
-                    <div class="item">
-                    <!-- <img src="img/icons/svg/compas.svg" alt="Compas" class="tile-image big-illustration"> -->
-                    <br />
-                    <div class="left">
-                    <h3 class="tile-title"> 179 Pset </h3>
-                    <p> By 3pm, Wednesd <br/> ~ 4.5 hrs</p>
-                    
-                    </div>
-                    </div>
-                    
-                    
-                </div>
-        </div>
-
-        <!-- for timing http://cubiq.org/dropbox/sw/ -->
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+          background-image: linear-gradient( #f9f9f9 , #eee );
+          border: none;
+        font-weight: bold;
+        color: #222;
+    text-shadow: none;
         
-        <br/>
-        <br/>
-        <p class="add-task left-more space" onclick="openBirthDate()"> Add Time</p>
-		<div class="form-group input right" onclick="openBirthDate()">
-            <input type="text" value="" placeholder="Start Time" class="form-control">
-        	<p id="result" class="left-more"> </p>
-        </div>
-		<!-- adding Location -->
-		<br/>
-        <p class="add-task left-more space"> Location</p>
 
-        <br/>
-        <form>
-             <div class="form-group">
-               <input class="placepicker form-control" data-map-container-id="collapseOne" />
-             </div>
+    } 
 
-             <div id="collapseOne" class="collapse">
-               <div class="placepicker-map thumbnail"></div>
-             </div>
-
-             <!--<button type="submit" class="btn btn-default">Submit</button> -->
-           </form>
-       <!-- <div class="row" data-example>
-        	<div class="col-md-6">
-           		<form>
-             		<div class="form-group">
-               			<input class="placepicker form-control left" data-map-container-id="collapseOne" />
-             		</div>
-             		
-           		</form>
-         	</div>
-        </div> -->
+    .ui-bar-a :hover {
+        color: red;
+    }
 
 
-		<p class="add-task left-more space"> Reward </p>
-		<div class="row" data-example>
-        	<div class="col-md-6">
-           		<form>
-             		<div class="form-group">
-               			<input class="form-control input left input-long" data-map-container-id="collapseOne" />
-             		</div>
-
-             		<!--<button type="submit" class="btn btn-default">Submit</button> -->
-           		</form>
-         	</div>
-        </div>
+    </style>
     
-    
+</head>
+
+<body>
+    <div data-role="page" id="feed-page">
+ 
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <h1>Work Prize</h1>
+            <a href="taskdetail.html" data-role="button" data-icon="bars" data-theme="c">Menu</a>
+            <a href="taskrequest.html" data-role="button" data-icon="edit" data-theme="c">New Task</a>
+        </div><!-- /header -->
+
+     
+        <br/> <br/>
+        <p class="center"> Talk to Andrew to set up goals, timing, and rewards! Get pumped!</p>
+        <br/> 
+        <a href="alerts.html" class="add-task left-more"> <span class="fui-plus"></span> + New Task...</a>
+        <br/> <br/>
+        <div>
+             <ul data-role="listview" id="feed-listview" class="ui-listview ui-shadow">
+
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                    <!-- face, available -->
+                    <div class="item-user-face">
+                        <img src="img/icons/png/test.png" class="user-face">
+                    </div>
+                    <!-- text -->
+                    <div class="item-info">
+                        <div class="icon-container">
+                        </div>
+                        <div class="item-text">
+                            <h1>Study for midterm</h1>
+                            <p>By <span class="bold">3:00 PM</span>, next Wednesday</p>
+                            <p>~ <span class="bold">6 hrs</span></p>
+                            
+                        </div>
+                    </div>
+                </a></li>
+
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                    <!-- face, available -->
+                    <div class="item-user-face">
+                        <img src="img/icons/png/money.png" class="user-face">
+                    </div>
+                    <!-- text -->
+                    <div class="item-info">
+                        <div class="icon-container">
+                        </div>
+                        <div class="item-text">
+                            <h1> Apply for summer jobs</h1>
+                            <p>By <span class="bold">10:00 PM</span>, Sunday</p>
+                            <p>~ <span class="bold">4 hrs</span></p>
+                            
+                        </div>
+                    </div>
+                </a></li>
+
+               
+
+            </ul>
+        </div>
+
+       <div data-role="fieldcontain">
+            <label for="name" > Time:</label>
+            <input type="text" placeholder="Enter a time" data-role="datebox" data-options='{"mode":"calbox"}'>
+            <img src="http://files.softicons.com/download/web-icons/web-grey-buttons-by-axialis-team/png/48x48/Calendar.png" width="15" id="textbox-icon" />
+        </div>  
+
+
+        <div data-role="fieldcontain">
+            <label for="name" > Location:</label>
+            <input class="placepicker form-control" type="text" name="name" id="name" value=""  />
+            <img class="placepicker-map thumbnail" src=" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQHxRYbRM67ejFa0vD3MitsoNMLHN-Akwv0xsJsk0VAkpKhzb5AYLLzWg" width="15" id="textbox-icon" />
+        </div>  
+
+
+        <div data-role="fieldcontain">
+            <label for="name"> Reward:</label>
+            <input type="text" placeholder="Type your own..." name="name" id="possiblereward" value=""  />
+            <p id="possiblereward"> </p>
+            <img src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-down-01-128.png" width="15" id="textbox-icon" onclick="openReward()" />
+        </div>  
+        <div class="ui-grid-c hide" id="rewardtiles">
+            
+
+            <a href="#" id="dark-color" onclick="Cookies()">  
+                <div class="ui-block-a hide "> 
+                    <img src="img/cookie.png" height="40" width="40"/>
+                    <div class="ui-bar ui-bar-a" id="red"style="height:30px"> Cookies </div> 
+                </div> 
+            </a>
+            <a href="#" id="dark-color" onclick="Massage()">  
+            <div class="ui-block-b hide">
+                <img src="img/massage.png" height="40" width="40"/>
+                <div class="ui-bar ui-bar-a" style="height:30px"> Back Massage </div></div>
+            </a>
+            <a href="#" id="dark-color" onclick="Tea()">  
+            <div class="ui-block-c hide">
+                <img src="img/tea.png" height="40" width="40"/>
+                <div class="ui-bar ui-bar-a" style="height:30px"> Tea </div></div>
+            </a>
+            <a href="#" id="dark-color" onclick="iceCream()">  
+            <div class="ui-block-d hide">
+                <img src="img/icecream.png" height="40" width="40"/>
+                <div class="ui-bar ui-bar-a" style="height:30px"> Ice cream </div></div>
+            </a>
+        </div><!-- /grid-c -->
+        <form action="alerts.html">
+        <input type="submit" value="Create Task" onclick=""/>
+        </form>
+    </div><!-- /page -->
+
+</body>
 </html>
