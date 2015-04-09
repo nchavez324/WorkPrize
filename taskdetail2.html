@@ -9,6 +9,51 @@
     <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/latest/jquery.mobile.js"></script>
 
+    <!-- google maps -->
+    !-- for location -->
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet"></link>
+
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places">
+    </script>
+
+    <script src="js/jquery.placepicker.js"></script>
+
+    <script>
+
+      $(document).ready(function() {
+        $("#rewardtiles").hide();
+        // Basic usage
+        $(".placepicker").placepicker();
+
+        // Advanced usage
+        $("#advanced-placepicker").each(function() {
+          var target = this;
+          var $collapse = $(this).parents('.form-group').next('.collapse');
+          var $map = $collapse.find('.another-map-class');
+
+          var placepicker = $(this).placepicker({
+            map: $map.get(0),
+            placeChanged: function(place) {
+              console.log("place changed: ", place.formatted_address, this.getLocation());
+            }
+          }).data('placepicker');
+        });
+
+      }); // END document.ready
+
+    </script>
+
+    <script>
+    function openReward() {
+        $("#rewardtiles").toggle();
+    }
+    </script>
+
+
     <style>
     #header {
         background: #f9f9f9; /*{*c-bup-background-color};*/
@@ -25,14 +70,40 @@
     #center-pic {
         margin-left: 22%;
     }
+    #textbox-icon {
+        position:absolute;
+        right:15px;
+        top:10px;
+    }
+    
+    .hide {
+ 
+        background-image: linear-gradient( #fff , #f1f1f1 );
+        background-image: linear-gradient( #f9f9f9 , #eee );
+          border: 1px solid #ccc ;
+        font-weight: bold;
+        color: #222 ;
+    text-shadow: none;
+    }
+    .ui-bar-a { 
+        background-image: linear-gradient( #fff, #f1f1f1 );
+
+          background-image: linear-gradient( #f9f9f9 , #eee );
+          border: none;
+        font-weight: bold;
+        color: #222;
+    text-shadow: none;
+        
+
+    } 
+
+    .ui-bar-a :hover {
+        color: red;
+    }
+
+
     </style>
-    <script>
-    $(function(){
-    $('#notifTimes').timepickr({
-        handle: '#trigger-test'
-        convention: 12 });
-});
-    </script>
+    
 </head>
 
 <body>
@@ -93,26 +164,74 @@
 
             </ul>
         </div>
-  
 
+       <div data-role="fieldcontain">
+            <label for="name" > Time:</label>
+            <input type="text" placeholder="Enter a time" data-role="datebox" data-options='{"mode":"calbox"}'>
+            <img src="http://files.softicons.com/download/web-icons/web-grey-buttons-by-axialis-team/png/48x48/Calendar.png" width="15" id="textbox-icon" />
+        </div>  
 
-        <div class="ui-field-contain">
-            <label for="notifTime">Notification Time:</label>
-            <input name="notifTime" id="notifTime" type="text" data-role="datebox" data-options='{"mode":"timebox", "useNewStyle":true, "overrideTimeFormat": 12, "themeButton": "b", "themeInput": "a", "theme": "b", "themeHeader": "b"}' />
-            <a href="#" class="ui-input-clear ui-btn ui-icon-calendar ui-btn-icon-notext ui-corner-all" title="Open Date Picker">Open Date Picker</a>
-        </div>
 
         <div data-role="fieldcontain">
             <label for="name" > Location:</label>
-            <input type="text" name="name" id="name" value=""  />
+            <input class="placepicker form-control" type="text" name="name" id="name" value=""  />
+            <img class="placepicker-map thumbnail" src=" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQHxRYbRM67ejFa0vD3MitsoNMLHN-Akwv0xsJsk0VAkpKhzb5AYLLzWg" width="15" id="textbox-icon" />
         </div>  
+
 
         <div data-role="fieldcontain">
             <label for="name"> Reward:</label>
-            <input type="text" name="name" id="name" value=""  />
+            <input type="text" placeholder="Type your own..." name="name" id="possiblereward" value=""  />
+            <p id="possiblereward"> </p>
+            <img src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-down-01-128.png" width="15" id="textbox-icon" onclick="openReward()" />
         </div>  
+        <div class="ui-grid-c hide" id="rewardtiles">
+            
 
-        <input type="submit" value="Create Task" />
+            <a href="#" id="dark-color" onclick="Cookies()">  
+                <div class="ui-block-a hide "> 
+                    <img src="img/cookie.png" height="40" width="40"/>
+                    <div class="ui-bar ui-bar-a" id="red"style="height:30px"> Cookies </div> 
+                </div> 
+            </a>
+            <a href="#" id="dark-color" onclick="Massage()">  
+            <div class="ui-block-b hide">
+                <img src="img/massage.png" height="40" width="40"/>
+                <div class="ui-bar ui-bar-a" style="height:30px"> Back Massage </div></div>
+            </a>
+            <a href="#" id="dark-color" onclick="Tea()">  
+            <div class="ui-block-c hide">
+                <img src="img/tea.png" height="40" width="40"/>
+                <div class="ui-bar ui-bar-a" style="height:30px"> Tea </div></div>
+            </a>
+            <a href="#" id="dark-color" onclick="iceCream()">  
+            <div class="ui-block-d hide">
+                <img src="img/icecream.png" height="40" width="40"/>
+                <div class="ui-bar ui-bar-a" style="height:30px"> Ice cream </div></div>
+            </a>
+        </div><!-- /grid-c -->
+
+        <script>
+        function Cookies() {
+            $("#rewardtiles").toggle();
+            $("#possiblereward").val("Cookie");
+        }
+        function Tea() {
+            $("#rewardtiles").toggle();
+            $("#possiblereward").val("Tea");
+        }
+        function Massage() {
+            $("#rewardtiles").toggle();
+            $("#possiblereward").val("Massage");
+        }
+        function iceCream() {
+            $("#rewardtiles").toggle();
+            $("#possiblereward").val("Ice cream");
+        }
+        </script>
+        <form action="alerts.html">
+        <input type="submit" value="Create Task" onclick=""/>
+        </form>
     </div><!-- /page -->
 
 </body>
