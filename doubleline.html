@@ -16,14 +16,17 @@
     <script src="js/custom/success.js"></script>
     <script src="js/taskdetail.js"></script>
 
-<script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
-<script type="text/javascript" src="plugins/jqplot.dateAxisRenderer.min.js"></script>
-<script type="text/javascript" src="plugins/jqplot.logAxisRenderer.min.js"></script>
-<script type="text/javascript" src="plugins/jqplot.canvasTextRenderer.min.js"></script>
-<script type="text/javascript" src="plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
-<script type="text/javascript" src="plugins/jqplot.highlighter.min.js"></script>
-<link rel="stylesheet" type="text/css" hrf="css/jquery.jqplot.min.css" />
-<link rel="stylesheet" type="text/css" hrf="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/smoothness/jquery-ui.css" />
+
+    <!-- Data Viz JS-->
+    <script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
+    <script type="text/javascript" src="plugins/jqplot.dateAxisRenderer.min.js"></script>
+    <script type="text/javascript" src="plugins/jqplot.logAxisRenderer.min.js"></script>
+    <script type="text/javascript" src="plugins/jqplot.canvasTextRenderer.min.js"></script>
+    <script type="text/javascript" src="plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+    <script type="text/javascript" src="plugins/jqplot.highlighter.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" hrf="css/jquery.jqplot.min.css" />
+    <link rel="stylesheet" type="text/css" hrf="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/smoothness/jquery-ui.css" />
    
 <script>
 $(document).ready(function () {
@@ -147,9 +150,20 @@ $(document).ready(function () {
  
         <div data-role="header" data-theme="b" data-position="fixed">
             <h1>Work Prize</h1>
-            <a href="taskdetail.html" data-role="button" data-icon="bars" data-theme="c">Menu</a>
-            <a href="taskrequest.html" data-role="button" data-icon="edit" data-theme="c">New Task</a>
+            <a href="#popupMenu-doubleline" data-rel="popup" data-role="button" data-icon="bars" data-theme="c">Menu</a>
         </div><!-- /header -->
+
+        <div data-role="popup" id="popupMenu-doubleline">
+            <ul data-role="listview">
+
+                <li><a href="index.html">Feed</a></li>
+                <li><a href="workmode.html">Work Mode</a></li>
+                <li><a href="worksum.html" rel="external">Statistics </a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Settings</a></li>
+
+            </ul>
+        </div><!-- /menu for header -->
 
 
         <div data-role="content"  id="chart2"> </div>
@@ -160,8 +174,8 @@ $(document).ready(function () {
        <div data-role="footer" data-theme="b" data-position= "fixed">     
     <div data-role="navbar">
         <ul>
-            <li><a href="worksum.html" >Hours</a></li>
-            <li><a href="friend.html" >Friend</a></li>
+            <li><a href="worksum.html" rel="external">Hours</a></li>
+            <li><a href="friend.html" rel="external">Friend</a></li>
             <li><a href="doubleline.html" class="ui-btn-active ui-state-persist">Work Summary</a></li>
         </ul>
     </div><!-- /navbar -->

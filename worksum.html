@@ -16,9 +16,11 @@
     <script src="js/taskdetail.js"></script>
 
 
-<script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
-<script type="text/javascript" src="js/jqplot.dateAxisRenderer.min.js"></script>
-<link rel="stylesheet" type="text/css" hrf="css/jquery.jqplot.min.css" />
+    <!-- Data Viz JS-->
+    <script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
+    <script type="text/javascript" src="js/jqplot.dateAxisRenderer.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" hrf="css/jquery.jqplot.min.css" />
 <script>
 $(document).ready(function(){
   var line1=[['2008-06-16',4], ['2008-7-07',6.5], ['2008-7-28',5.7], ['2008-8-18',9], ['2008-9-8',8.2]];
@@ -53,9 +55,20 @@ $(document).ready(function(){
  
         <div data-role="header" data-theme="b" data-position="fixed">
             <h1>Work Prize</h1>
-            <a href="taskdetail.html" data-role="button" data-icon="bars" data-theme="c">Menu</a>
-            <a href="taskrequest.html" data-role="button" data-icon="edit" data-theme="c">New Task</a>
+            <a href="#popupMenu-worksum" data-rel="popup" data-role="button" data-icon="bars" data-theme="c">Menu</a>
         </div><!-- /header -->
+
+        <div data-role="popup" id="popupMenu-worksum">
+            <ul data-role="listview">
+
+                <li><a href="index.html">Feed</a></li>
+                <li><a href="workmode.html">Work Mode</a></li>
+                <li><a href="worksum.html" rel="external">Statistics </a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Settings</a></li>
+
+            </ul>
+        </div><!-- /menu for header -->
 
 
         <div data-role="content"  id="chart2"> </div>
@@ -67,8 +80,8 @@ $(document).ready(function(){
     <div data-role="navbar">
         <ul>
             <li><a href="worksum.html" class="ui-btn-active ui-state-persist">Hours</a></li>
-            <li><a href="friend.html">Friend</a></li>
-            <li><a href="doubleline.html">Work Summary</a></li>
+            <li><a href="friend.html" rel="external">Friend</a></li>
+            <li><a href="doubleline.html" rel="external">Work Summary</a></li>
         </ul>
     </div><!-- /navbar -->
 </div><!-- /footer -->
