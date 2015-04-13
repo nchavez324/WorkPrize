@@ -1,6 +1,6 @@
 var checkingUpload = false;
 
-$(document).ready(function(){
+$(document).on("pageinit", function() {
    
 	//var uploadButton = $("#upload-button");
 	//uploadButton.button();

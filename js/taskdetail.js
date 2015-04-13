@@ -1,6 +1,8 @@
 
 
- $(document).ready(function() {
+$(document).on("pageinit", function() {
+  
+  /*
         $("#rewardtiles").hide();
         // Basic usage
         $(".placepicker").placepicker();
@@ -18,11 +20,11 @@
             }
           }).data('placepicker');
         });
-
+*/
       }); // END document.ready
 
-      function openReward() {
-        $("#rewardtiles").toggle();
+function openReward() {
+  $("#rewardtiles").toggle();
 }
 
 function Cookies() {

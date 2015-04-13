@@ -7,25 +7,37 @@
     <link rel="stylesheet" href="css/feed-style.css">
     <link rel="stylesheet" href="css/custom/success.css">
 
-    <!--
-    <link href="http://code.jquery.com/mobile/latest/jquery.mobile.css" rel="stylesheet" type="text/css" />
-    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script src="http://code.jquery.com/mobile/latest/jquery.mobile.js"></script>
-    -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- all custom js -->
+    <script src="js/custom/done.js"></script>
     <script src="js/custom/success.js"></script>
+    <script src="js/taskdetail.js"></script>
+    
 </head>
 
 <body>
     <div data-role="page" id="feed-page">
- 
+
         <div data-role="header" data-theme="b" data-position="fixed">
             <h1>Work Prize</h1>
-            <a href="#" data-role="button" data-icon="bars" data-theme="c">Menu</a>
-            <a href="#" data-role="button" data-icon="check" data-theme="c">Done</a>
+            <a href="#popupMenu-success" data-rel="popup" data-role="button" data-icon="bars" data-theme="c">Menu</a>
+            <a href="index.html" data-role="button" data-icon="check" data-theme="c">Done</a>
         </div><!-- /header -->
+
+        <div data-role="popup" id="popupMenu-success">
+            <ul data-role="listview">
+
+                <li><a href="index.html">Feed</a></li>
+                <li><a href="workmode.html">Work Mode</a></li>
+                <li><a href="#">Statistics </a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Settings</a></li>
+
+            </ul>
+        </div><!-- /menu for header -->
 
         <div class="center-div">
             <h2 class="center-text">SUCCESS!!</h2>

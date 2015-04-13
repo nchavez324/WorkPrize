@@ -14,7 +14,7 @@ var SCREEN_WIDTH = window.innerWidth,
     colorCode = 0;
 
 // init
-$(document).ready(function() {
+$(document).on("pageinit", function() {
 
     var mainBody = $("#mainBody");
     mainBody.append(canvas);
