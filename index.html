@@ -5,26 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/feed-style.css">
 
-    <link href="http://code.jquery.com/mobile/latest/jquery.mobile.css" rel="stylesheet" type="text/css" />
-    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <script src="http://code.jquery.com/mobile/latest/jquery.mobile.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
 
 <body>
+
     <div data-role="page" id="feed-page">
- 
+
         <div data-role="header" data-theme="b" data-position="fixed">
             <h1>Work Prize</h1>
-            <a href="#" data-role="button" data-icon="bars" data-theme="c">Menu</a>
+            <a href="#popupMenu" data-rel="popup" data-role="button" data-icon="bars" data-theme="c">Menu</a>
             <a href="newtask.html" data-role="button" data-icon="edit" data-theme="c">New Task</a>
         </div><!-- /header -->
 
-        <div>
+        <div data-role="popup" id="popupMenu">
+            <ul data-role="listview">
 
+                <li><a href="index.html">Feed</a></li>
+                <li><a href="workmode.html">Work Mode</a></li>
+                <li><a href="#">Statistics </a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Settings</a></li>
+
+            </ul>
+        </div><!-- /menu for header -->
+
+        <div>
             <ul data-role="listview" id="feed-listview" class="ui-listview ui-shadow">
               
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="alerts.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-0.png" class="user-face">
@@ -46,7 +58,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-1.png" class="user-face">
@@ -67,7 +79,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-2.png" class="user-face">
@@ -89,7 +101,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-3.png" class="user-face">
@@ -111,7 +123,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-5.png" class="user-face">
@@ -132,7 +144,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-4.png" class="user-face">
@@ -155,7 +167,7 @@
 
                 <!-- repeat -->
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-0.png" class="user-face">
@@ -177,7 +189,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-1.png" class="user-face">
@@ -198,7 +210,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-2.png" class="user-face">
@@ -220,7 +232,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-3.png" class="user-face">
@@ -242,7 +254,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-5.png" class="user-face">
@@ -263,7 +275,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-4.png" class="user-face">
@@ -282,12 +294,9 @@
                             <p>Apply for summer jobs</p>
                         </div>
                     </div>
-                </a></li>
-
-               
-
+                </a></li>     
             </ul>
-        </div>
+        </div><!-- /listview -->
  
     </div><!-- /page -->
 

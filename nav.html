@@ -5,45 +5,46 @@
 
 <head>
 
-<meta charset="utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
-<title>Menu</title>
+	<title>Menu</title>
+	
+	<link href="http://code.jquery.com/mobile/latest/jquery.mobile.css" rel="stylesheet" type="text/css" />
+  <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script src="http://code.jquery.com/mobile/latest/jquery.mobile.js"></script>
 
-<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
-  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
-    <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 
-<link rel="stylesheet" href="css/burger.css">
+
+	<link rel="stylesheet" href="css/burger.css">
 
 </head>
 
 <body>
 
-<header data-position="fixed">
-<a href="#" id="logo"></a>
+	<header data-position="fixed">
+		<a href="#" id="logo"></a>
 
-<nav>
+		<nav>
 
-<a href="index.html" id="menu-icon"></a>
+			<a href="index.html" id="menu-icon"></a>
+			<ul data-role="listview">
 
-<ul>
+				<li><a href="index.html" class="current">Feed</a></li>
+				<li><a href="#">Work Mode</a></li>
+				<li><a href="#">Statistics </a></li>
+				<li><a href="#">Account</a></li>
+				<li><a href="#">Settings</a></li>
 
-<li><a href="index.html" class="current">Feed</a></li>
-<li><a href="#">Work Mode</a></li>
-<li><a href="#">Statistics </a></li>
-<li><a href="#">Account</a></li>
-<li><a href="#">Settings</a></li>
+			</ul>
 
-</ul>
+		</nav>
 
-</nav>
+		<div data-role="content"> 
+			<h1>WorkPrize</h1> 
+		</div> 
 
-<div data-role="content"> 
-	<h1>WorkPrize</h1> 
-</div> 
-
-</header>
+	</header>
 
 </body>
 
