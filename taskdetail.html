@@ -14,6 +14,7 @@
     <script src="js/custom/success.js"></script>
     <script src="js/taskdetail.js"></script>
 
+
     <!-- google maps -->
     <!-- for location
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -76,7 +77,9 @@
         color: red;
     }
 
-
+    .center {
+        text-align: center;
+    }
     </style>
     
 </head>
@@ -105,7 +108,8 @@
         <br/> <br/>
         <p class="center"> Talk to Andrew to set up goals, timing, and rewards! Get pumped!</p>
         <br/> 
-        <a href="alerts.html" class="add-task left-more"> <span class="fui-plus"></span> + New Task...</a>
+        <div class="center">
+        <a href="alerts.html" class="add-task left-more"> <span class="fui-plus"></span> + New Task...</a> </div>
         <br/> <br/>
         <div>
              <ul data-role="listview" id="feed-listview" class="ui-listview ui-shadow">
@@ -151,29 +155,31 @@
             </ul>
         </div>
 
-       <div data-role="fieldcontain">
+
+       <!-- form stuff -->
+       <form action="workmode.html" method="get" target="_blank">
+        <div data-role="fieldcontain">
             <label for="name" > Time:</label>
-            <input type="text" placeholder="Enter a time" data-role="datebox" data-options='{"mode":"calbox"}'>
+            <input type="text" placeholder="Enter a time" name="time" data-role="datebox" data-options='{"mode":"calbox"}'>
             <img src="http://files.softicons.com/download/web-icons/web-grey-buttons-by-axialis-team/png/48x48/Calendar.png" width="15" id="textbox-icon" />
         </div>  
 
 
         <div data-role="fieldcontain">
             <label for="name" > Location:</label>
-            <input class="placepicker form-control" type="text" name="name" id="name" value=""  />
+            <input class="placepicker form-control" type="text" name="location" id="name" value=""  />
             <img class="placepicker-map thumbnail" src=" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQHxRYbRM67ejFa0vD3MitsoNMLHN-Akwv0xsJsk0VAkpKhzb5AYLLzWg" width="15" id="textbox-icon" />
         </div>  
 
 
         <div data-role="fieldcontain">
             <label for="name"> Reward:</label>
-            <input type="text" placeholder="Type your own..." name="name" id="possiblereward" value=""  />
+            <input type="text" placeholder="Type your own..." name="reward" id="possiblereward" value=""  />
             <p id="possiblereward"> </p>
             <img src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-down-01-128.png" width="15" id="textbox-icon" onclick="openReward()" />
         </div>  
-        <div class="ui-grid-c hide" id="rewardtiles">
-            
 
+        <div class="ui-grid-c hide" id="rewardtiles">
             <a href="#" id="dark-color" onclick="Cookies()">  
                 <div class="ui-block-a hide "> 
                     <img src="img/cookie.png" height="40" width="40"/>
@@ -196,8 +202,10 @@
                 <div class="ui-bar ui-bar-a" style="height:30px"> Ice cream </div></div>
             </a>
         </div><!-- /grid-c -->
-        <a href="workmode.html" data-role="button">Create Task</a>
+        <input type="submit" data-role="button" value="Create Task">
+    </form>
     </div><!-- /page -->
-
+        
+    
 </body>
 </html>

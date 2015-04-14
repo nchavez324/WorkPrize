@@ -14,9 +14,96 @@
     <script src="js/custom/success.js"></script>
     <script src="js/taskdetail.js"></script>
 
+    <script>
+    
+    function testing() { 
+        /*
+        function parseURLParams(url) {
+        var queryStart = url.indexOf("?") + 1,
+            queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+            query = url.slice(queryStart, queryEnd - 1),
+            pairs = query.replace(/\+/g, " ").split("&"),
+            parms = {}, i, n, v, nv;
+
+        if (query === url || query === "") {
+            return;
+        }
+
+        for (i = 0; i < pairs.length; i++) {
+            nv = pairs[i].split("=");
+            n = decodeURIComponent(nv[0]);
+            v = decodeURIComponent(nv[1]);
+
+            if (!parms.hasOwnProperty(n)) {
+                parms[n] = [];
+            }
+
+            parms[n].push(nv.length === 2 ? v : null);
+        }
+        return parms;
+        } */
+        function getUrlVars()
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+        var time = getUrlVars()["time"];
+        var location = getUrlVars()["location"];
+        var reward = getUrlVars()["reward"];
+        $("#location").text(location);
+        $("#reward").text(reward);
+        $("#time").text(time);
+    }
+    
+    window.onload = testing;
+    </script>
+
+    <!-- for the alerts. will separate out soon --> 
+    <script> 
+
+    function choiceAlert2() {
+        swal({   
+            title: "You sure you want to quit? ",   
+            text: "If so, you better give us a damn good reason",   
+            type: "input",   
+            showCancelButton: true,   
+            closeOnConfirm: false,   
+            animation: "slide-from-top" 
+        }, 
+        function(inputValue){   
+            if (inputValue === false) {
+                return false; 
+            }    
+            if (inputValue === "") {     
+                swal.showInputError("You need to write something!");     
+                return false   
+            }      
+            swal("Cancelled", "We've let your partner know that: " + inputValue, "error");
+            setTimeout(function () { window.location = "index.html";}, 5000);
+            
+        
+        });
+    }
+    
+</script>
+<script src="lib/sweet-alert.min.js"></script> 
+
+<link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
+
+
 </head>
 
 <body>
+
+ 
     <div data-role="page" id="new-task">
  
         <div data-role="header" data-theme="b" data-position="fixed">
@@ -46,10 +133,12 @@
 
         <div class="center-wrapper">
             <p>Started at:</p>
-            <p>7:30pm</p>
+            <p id="time"></p>
             <img src="img/timer.png">
-            <p>Done by:</p>
-            <p>9:30pm</p>
+            <p> Location: </p>
+            <p id="location"> </p>
+            <!--<p>Done by:</p>
+            <p>9:30pm</p> -->
         </div>
                     
         <div>
@@ -67,6 +156,21 @@
                         </div>
                     </div>
                 </li>
+
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child" id="header">
+                    <!-- face, available -->
+                    <div class="item-user-face" id="center-pic">
+                        <img src="img/girl.png" class="user-face">
+                    </div>
+                    <!-- text -->
+                    <div class="item-info">
+                        <div class="item-text">
+                            <h1> Me </h1>
+                            <p id="reward">will reward you with</p>
+                        </div>
+                    </div>
+                </li>
+
             </ul>
         </div>
 
@@ -124,7 +228,7 @@
             </div>
 
         <div class="center-wrapper">
-            <a href="index.html" data-role="button" data-inline="true" data-mini="true">Abort</a>
+            <a href="#" data-role="button" data-inline="true" data-mini="true" onclick="choiceAlert2()">Abort</a>
         </div>
 
     </div><!-- /page -->
