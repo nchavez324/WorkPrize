@@ -81,10 +81,64 @@
         text-align: center;
     }
     </style>
+
+        <script>
+    
+    function testing() { 
+        /*
+        function parseURLParams(url) {
+        var queryStart = url.indexOf("?") + 1,
+            queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+            query = url.slice(queryStart, queryEnd - 1),
+            pairs = query.replace(/\+/g, " ").split("&"),
+            parms = {}, i, n, v, nv;
+
+        if (query === url || query === "") {
+            return;
+        }
+
+        for (i = 0; i < pairs.length; i++) {
+            nv = pairs[i].split("=");
+            n = decodeURIComponent(nv[0]);
+            v = decodeURIComponent(nv[1]);
+
+            if (!parms.hasOwnProperty(n)) {
+                parms[n] = [];
+            }
+
+            parms[n].push(nv.length === 2 ? v : null);
+        }
+        return parms;
+        } */
+        function getUrlVars()
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+        var duration = getUrlVars()["duration"];
+        var datetime = getUrlVars()["datetime"];
+        var task = getUrlVars()["task"];
+        $("#task").text(task);
+        $("#datetime").text(datetime);
+        $("#duration").text(duration);
+    }
+    
+    window.onload = testing;
+    </script>
     
 </head>
 
 <body>
+   
+
     <div data-role="page" id="feed-page">
  
         <div data-role="header" data-theme="b" data-position="fixed">
@@ -108,6 +162,8 @@
         <br/> <br/>
         <p class="center"> Talk to Andrew to set up goals, timing, and rewards! Get pumped!</p>
         <br/> 
+
+
         <div class="center">
         <a href="alerts.html" class="add-task left-more"> <span class="fui-plus"></span> + New Task...</a> </div>
         <br/> <br/>
@@ -150,10 +206,31 @@
                     </div>
                 </a></li>
 
+                                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
+                    <!-- face, available -->
+                    <div class="item-user-face">
+                        <img src="img/icons/png/money.png" class="user-face">
+                    </div>
+                    <!-- text -->
+                    <div class="item-info">
+                        <div class="icon-container">
+                        </div>
+                        <div class="item-text">
+                            <h1 id="task"> Apply for summer jobs</h1>
+                            <p id="datetime">By <span class="bold" >10:00 PM</span>, Sunday</p>
+                            <p >~ <span class="bold" id="duration">4 hrs</span></p>
+                            
+                        </div>
+                    </div>
+                </a></li>
                
 
             </ul>
         </div>
+
+             <p id="duration"></p>
+    <p id="datetime"></p>
+    <p id="task"></p>
 
 
        <!-- form stuff -->
