@@ -14,16 +14,19 @@
     <script src="js/custom/success.js"></script>
     <script src="js/taskdetail.js"></script>
 
+    <link rel="stylesheet" href="css/WorkPrize.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+
 </head>
 
 <body>
 
     <div data-role="page" id="feed-page">
 
-        <div data-role="header" data-theme="b" data-position="fixed">
+        <div data-role="header" data-theme="a" data-position="fixed">
             <h1>Work Prize</h1>
-            <a href="#popupMenu-index" data-rel="popup" data-role="button" data-icon="bars" data-theme="c">Menu</a>
-            <a href="newtask.html" data-role="button" data-icon="edit" data-theme="c">New Task</a>
+            <a href="#popupMenu-index" data-rel="popup" data-role="button" data-icon="bars" data-theme="a">Menu</a>
+            <a href="newtask.html" data-role="button" data-icon="edit" data-theme="a">New Task</a>
         </div><!-- /header -->
 
         <div data-role="popup" id="popupMenu-index">
@@ -41,7 +44,7 @@
         <div>
             <ul data-role="listview" id="feed-listview" class="ui-listview ui-shadow">
               
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-0.png" class="user-face">
@@ -55,7 +58,7 @@
                             <img src="img/icons/favorite-star.png" class="icon-token">
                         </div>
                         <div class="item-text">
-                            <h1>Andrew Mauboussin</h1>
+                            <h1 class="profile_name">Andrew Mauboussin</h1>
                             <p>By <span class="bold">11:59 PM</span>, tonight</p>
                             <p>~ <span class="bold">4 hrs</span></p>
                             <p>SW Project Draft</p>
@@ -63,7 +66,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-1.png" class="user-face">
@@ -76,7 +79,7 @@
                         <div class="icon-container">
                         </div>
                         <div class="item-text">
-                            <h1>Nicole Bassoff</h1>
+                            <h1 class="profile_name">Nicole Bassoff</h1>
                             <p>By <span class="bold">5:00 PM</span>, tonight</p>
                             <p>~ <span class="bold">3 hrs</span></p>
                             <p>Funding Application</p>
@@ -84,7 +87,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-2.png" class="user-face">
@@ -98,7 +101,7 @@
                             <img src="img/icons/favorite-star.png" class="icon-token">
                         </div>
                         <div class="item-text">
-                            <h1>Alan Zhou</h1>
+                            <h1 class="profile_name">Alan Zhou</h1>
                             <p>By <span class="bold">10:00 PM</span>, Friday</p>
                             <p>~ <span class="bold">1 hr</span></p>
                             <p>Work out this week</p>
@@ -106,7 +109,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-3.png" class="user-face">
@@ -120,7 +123,7 @@
                             <img src="img/icons/favorite-star.png" class="icon-token">
                         </div>
                         <div class="item-text">
-                            <h1>Austin Shin</h1>
+                            <h1 class="profile_name">Austin Shin</h1>
                             <p>By <span class="bold">9:00 AM</span>, Tuesday</p>
                             <p>~ <span class="bold">1.5 hrs</span></p>
                             <p>Go buy a suit for wedding</p>
@@ -128,7 +131,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-5.png" class="user-face">
@@ -141,7 +144,7 @@
                         <div class="icon-container">
                         </div>
                         <div class="item-text">
-                            <h1>Abel Deandreis</h1>
+                            <h1 class="profile_name">Abel Deandreis</h1>
                             <p>By <span class="bold">3:00 PM</span>, next Wednesday</p>
                             <p>~ <span class="bold">6 hrs</span></p>
                             <p>Study for midterm</p>
@@ -149,7 +152,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-4.png" class="user-face">
@@ -162,7 +165,7 @@
                         <div class="icon-container">
                         </div>
                         <div class="item-text">
-                            <h1>Sarah Martini</h1>
+                            <h1 class="profile_name">Sarah Martini</h1>
                             <p>By <span class="bold">10:00 PM</span>, Sunday</p>
                             <p>~ <span class="bold">4 hrs</span></p>
                             <p>Apply for summer jobs</p>
@@ -172,7 +175,7 @@
 
                 <!-- repeat -->
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-0.png" class="user-face">
@@ -186,7 +189,7 @@
                             <img src="img/icons/favorite-star.png" class="icon-token">
                         </div>
                         <div class="item-text">
-                            <h1>Andrew Mauboussin</h1>
+                            <h1 class="profile_name">Andrew Mauboussin</h1>
                             <p>By <span class="bold">11:59 PM</span>, tonight</p>
                             <p>~ <span class="bold">4 hrs</span></p>
                             <p>SW Project Draft</p>
@@ -194,7 +197,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-1.png" class="user-face">
@@ -207,7 +210,7 @@
                         <div class="icon-container">
                         </div>
                         <div class="item-text">
-                            <h1>Nicole Bassoff</h1>
+                            <h1 class="profile_name">Nicole Bassoff</h1>
                             <p>By <span class="bold">5:00 PM</span>, tonight</p>
                             <p>~ <span class="bold">3 hrs</span></p>
                             <p>Funding Application</p>
@@ -215,7 +218,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-2.png" class="user-face">
@@ -229,7 +232,7 @@
                             <img src="img/icons/favorite-star.png" class="icon-token">
                         </div>
                         <div class="item-text">
-                            <h1>Alan Zhou</h1>
+                            <h1 class="profile_name">Alan Zhou</h1>
                             <p>By <span class="bold">10:00 PM</span>, Friday</p>
                             <p>~ <span class="bold">1 hr</span></p>
                             <p>Work out this week</p>
@@ -237,7 +240,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-3.png" class="user-face">
@@ -251,7 +254,7 @@
                             <img src="img/icons/favorite-star.png" class="icon-token">
                         </div>
                         <div class="item-text">
-                            <h1>Austin Shin</h1>
+                            <h1 class="profile_name">Austin Shin</h1>
                             <p>By <span class="bold">9:00 AM</span>, Tuesday</p>
                             <p>~ <span class="bold">1.5 hrs</span></p>
                             <p>Go buy a suit for wedding</p>
@@ -259,7 +262,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-5.png" class="user-face">
@@ -272,7 +275,7 @@
                         <div class="icon-container">
                         </div>
                         <div class="item-text">
-                            <h1>Abel Deandreis</h1>
+                            <h1 class="profile_name">Abel Deandreis</h1>
                             <p>By <span class="bold">3:00 PM</span>, next Wednesday</p>
                             <p>~ <span class="bold">6 hrs</span></p>
                             <p>Study for midterm</p>
@@ -280,7 +283,7 @@
                     </div>
                 </a></li>
 
-                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="taskrequest.html" class="">
+                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="javascript:void(0)" onclick="taskdetail(this)" class="">
                     <!-- face, available -->
                     <div class="item-user-face">
                         <img src="img/user/face-4.png" class="user-face">
@@ -293,7 +296,7 @@
                         <div class="icon-container">
                         </div>
                         <div class="item-text">
-                            <h1>Sarah Martini</h1>
+                            <h1 class="profile_name">Sarah Martini</h1>
                             <p>By <span class="bold">10:00 PM</span>, Sunday</p>
                             <p>~ <span class="bold">4 hrs</span></p>
                             <p>Apply for summer jobs</p>
