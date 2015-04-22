@@ -18,54 +18,9 @@
 
     <script>
     
-    function testing() { 
-        /*
-        function parseURLParams(url) {
-        var queryStart = url.indexOf("?") + 1,
-            queryEnd   = url.indexOf("#") + 1 || url.length + 1,
-            query = url.slice(queryStart, queryEnd - 1),
-            pairs = query.replace(/\+/g, " ").split("&"),
-            parms = {}, i, n, v, nv;
-
-        if (query === url || query === "") {
-            return;
-        }
-
-        for (i = 0; i < pairs.length; i++) {
-            nv = pairs[i].split("=");
-            n = decodeURIComponent(nv[0]);
-            v = decodeURIComponent(nv[1]);
-
-            if (!parms.hasOwnProperty(n)) {
-                parms[n] = [];
-            }
-
-            parms[n].push(nv.length === 2 ? v : null);
-        }
-        return parms;
-        } */
-        function getUrlVars()
-        {
-            var vars = [], hash;
-            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-            for(var i = 0; i < hashes.length; i++)
-            {
-                hash = hashes[i].split('=');
-                vars.push(hash[0]);
-                vars[hash[0]] = hash[1];
-            }
-            return vars;
-        }
-
-        var time = getUrlVars()["time"];
-        var location = getUrlVars()["location"];
-        var reward = getUrlVars()["reward"];
-        $("#location").text(location);
-        $("#reward").text(reward);
-        $("#time").text(time);
-    }
     
-    window.onload = testing;
+    
+    window.onload = getTask;
     </script>
 
     <!-- for the alerts. will separate out soon --> 
@@ -106,7 +61,7 @@
 <body>
 
  
-    <div data-role="page" id="new-task">
+    <div data-role="page" id="work-mode">
  
         <div data-role="header" data-theme="a" data-position="fixed">
             <h1>Work Prize</h1>

@@ -16,17 +16,14 @@
 
 
     <!-- google maps -->
-    <!-- for location
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet"></link>
+    <!-- for location -->
+
 
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places">
     </script>
 
-    <script src="js/jquery.placepicker.js"></script>-->
+    <script src="js/jquery.placepicker.js"></script>
     
 
     <!-- this is only in file because jQuery doesn't seem to reload css -->
@@ -80,58 +77,54 @@
     .center {
         text-align: center;
     }
+
+    a {
+        text-decoration: none;
+    }
+    a.img{
+        padding-left: 1%;
+    }
     </style>
 
-        <script>
-    
-    function testing() { 
-        /*
-        function parseURLParams(url) {
-        var queryStart = url.indexOf("?") + 1,
-            queryEnd   = url.indexOf("#") + 1 || url.length + 1,
-            query = url.slice(queryStart, queryEnd - 1),
-            pairs = query.replace(/\+/g, " ").split("&"),
-            parms = {}, i, n, v, nv;
+    <script>
 
-        if (query === url || query === "") {
-            return;
-        }
 
-        for (i = 0; i < pairs.length; i++) {
-            nv = pairs[i].split("=");
-            n = decodeURIComponent(nv[0]);
-            v = decodeURIComponent(nv[1]);
+    function testing2() {
 
-            if (!parms.hasOwnProperty(n)) {
-                parms[n] = [];
-            }
+        data = window.location.href.split('?');
 
-            parms[n].push(nv.length === 2 ? v : null);
-        }
-        return parms;
-        } */
-        function getUrlVars()
-        {
-            var vars = [], hash;
-            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-            for(var i = 0; i < hashes.length; i++)
-            {
-                hash = hashes[i].split('=');
-                vars.push(hash[0]);
-                vars[hash[0]] = hash[1];
-            }
-            return vars;
-        }
+        if (data.length < 2) return;
 
-        var duration = getUrlVars()["duration"];
-        var datetime = getUrlVars()["datetime"];
-        var task = getUrlVars()["task"];
-        $("#task").text(task);
-        $("#datetime").text(datetime);
-        $("#duration").text(duration);
+        data_split = data[1].split('=');
+        console.log(data_split);
+
+        var youre_awesome = data_split[2]; 
+        youre_awesome = decodeURIComponent(youre_awesome);
+
+        $("#profile_name").text(youre_awesome);
+        
+        /*data = {}
+        for (var i = data_split[2].length - 1; i >= 0; i--) {
+            s = data_split[i].split('=');
+            data[s[0]] = decodeURIComponent(s[1]);
+        };
+
+        var $profile_name = $(document).find('#request-profile-name');
+        console.log(data['profile_name']);
+        $profile_name.html(data['profile_name']);*/
+
+
+/*
+        $("#name").text("test");
+        var name = data['profile_name'];
+        alert(name); */
+
+        
+     
     }
     
-    window.onload = testing;
+
+    window.onload = testing2;
     </script>
     
 </head>
@@ -139,7 +132,8 @@
 <body>
    
 
-    <div data-role="page" id="feed-page">
+    <div data-role="page" id="task-detail">
+
  
         <div data-role="header" data-theme="b" data-position="fixed">
             <h1>Work Prize</h1>
@@ -160,7 +154,7 @@
 
      
         <br/> <br/>
-        <p class="center"> Talk to Andrew to set up goals, timing, and rewards! Get pumped!</p>
+        <p class="center"> Talk to <span id="profile_name"> Bleh </span> to set up goals, timing, and rewards! Get pumped!</p>
         <br/> 
 
 
@@ -206,23 +200,6 @@
                     </div>
                 </a></li>
 
-                                <li class="ui-body-inherit ui-li-has-thumb ui-first-child"><a href="#" class="">
-                    <!-- face, available -->
-                    <div class="item-user-face">
-                        <img src="img/icons/png/money.png" class="user-face">
-                    </div>
-                    <!-- text -->
-                    <div class="item-info">
-                        <div class="icon-container">
-                        </div>
-                        <div class="item-text">
-                            <h1 id="task"> Apply for summer jobs</h1>
-                            <p id="datetime">By <span class="bold" >10:00 PM</span>, Sunday</p>
-                            <p >~ <span class="bold" id="duration">4 hrs</span></p>
-                            
-                        </div>
-                    </div>
-                </a></li>
                
 
             </ul>
@@ -238,13 +215,13 @@
         <div data-role="fieldcontain">
             <label for="name" > Time:</label>
             <input type="text" placeholder="Enter a time" name="time" data-role="datebox" data-options='{"mode":"calbox"}'>
-            <img src="http://files.softicons.com/download/web-icons/web-grey-buttons-by-axialis-team/png/48x48/Calendar.png" width="15" id="textbox-icon" />
+            <img src="http://touristsocial.net/images/icons/calendar.png" width="15" id="textbox-icon" />
         </div>  
 
 
         <div data-role="fieldcontain">
             <label for="name" > Location:</label>
-            <input class="placepicker form-control" type="text" name="location" id="name" value=""  />
+            <input class="placepicker form-control" type="text" name="location" placeholder="Enter a location" id="name" value=""  />
             <img class="placepicker-map thumbnail" src=" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQHxRYbRM67ejFa0vD3MitsoNMLHN-Akwv0xsJsk0VAkpKhzb5AYLLzWg" width="15" id="textbox-icon" />
         </div>  
 
@@ -255,30 +232,29 @@
             <p id="possiblereward"> </p>
             <img src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-down-01-128.png" width="15" id="textbox-icon" onclick="openReward()" />
         </div>  
-
-        <div class="ui-grid-c hide" id="rewardtiles">
-            <a href="#" id="dark-color" onclick="Cookies()">  
-                <div class="ui-block-a hide "> 
-                    <img src="img/cookie.png" height="40" width="40"/>
-                    <div class="ui-bar ui-bar-a" id="red"style="height:30px"> Cookies </div> 
-                </div> 
+        <div class="ui-grid-c">
+            <div class="ui-block-a"> <a href="#" id="dark-color" onclick="Cookies()">  
+                <img src="img/cookie.png" height="40" width="40" style="margin-left:25px"/>
+                <div class="ui-bar ui-bar-a" id="red"style="height:30px"> Cookies </div> 
             </a>
-            <a href="#" id="dark-color" onclick="Massage()">  
-            <div class="ui-block-b hide">
-                <img src="img/massage.png" height="40" width="40"/>
-                <div class="ui-bar ui-bar-a" style="height:30px"> Back Massage </div></div>
+            </div>
+            <div class="ui-block-b"> <a href="#" id="dark-color" onclick="Massage()"> 
+                <img src="img/massage.png" height="40" width="40" style="margin-left:25px"s/>
+                <div class="ui-bar ui-bar-a" style="height:30px"> Back Massage </div>
             </a>
-            <a href="#" id="dark-color" onclick="Tea()">  
-            <div class="ui-block-c hide">
-                <img src="img/tea.png" height="40" width="40"/>
-                <div class="ui-bar ui-bar-a" style="height:30px"> Tea </div></div>
+            </div>
+            <div class="ui-block-c"> <a href="#" id="dark-color" onclick="Tea()">  
+                 <img src="img/tea.png" height="40" width="40"style="margin-left:25px"/>
+                <div class="ui-bar ui-bar-a" style="height:30px"> Tea </div>
             </a>
-            <a href="#" id="dark-color" onclick="iceCream()">  
-            <div class="ui-block-d hide">
-                <img src="img/icecream.png" height="40" width="40"/>
-                <div class="ui-bar ui-bar-a" style="height:30px"> Ice cream </div></div>
+            </div>
+            <div class="ui-block-d"> <a href="#" id="dark-color" onclick="iceCream()">  
+                <img src="img/icecream.png" height="40" width="40" style="margin-left:25px" />
+                <div class="ui-bar ui-bar-a" style="height:30px"> Ice cream </div>
             </a>
+            </div>
         </div><!-- /grid-c -->
+
         <input type="submit" data-role="button" value="Create Task">
     </form>
     </div><!-- /page -->

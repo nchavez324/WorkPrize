@@ -3,7 +3,7 @@ var checkingUpload = false;
 $(document).on("pageinit", function() {
    
 	//var uploadButton = $("#upload-button");
-	//uploadButton.button();
+	//uploadButton.button();s
 
 	$("#popupDialog").ready(function(){
 
@@ -192,6 +192,57 @@ function taskdetail(link) {
 
 		jQuery.mobile.changePage(link)
 }
+
+function testing() {
+	
+	var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            //alert(hashes);
+
+    link = "taskdetail.html?" + encodeQueryData(hashes);
+    	jQuery.mobile.changePage(link)
+
+
+	/*{data = {'profile_name': name};
+
+    link = "taskdetail.html?" + encodeQueryData(data);
+
+    	jQuery.mobile.changePage(link) */
+
+}
+
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    //alert(hashes);
+
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+function getTask() {
+	    var location = getUrlVars()["location"];
+        var location = location.replace(/\+/g, ' ');
+
+        var reward = getUrlVars()["reward"];
+        var reward = reward.replace(/\+/g, ' ');
+
+        $("#location").text(location);
+        $("#reward").text(reward);
+        var time = getUrlVars()["time"];
+        var time= time.replace(/\+/g, ' ');
+
+
+        $("#time").text(time);
+}
+
+
 // Usage:
 //   var data = { 'first name': 'George', 'last name': 'Jetson', 'age': 110 };
 //   var querystring = encodeQueryData(data);
@@ -227,5 +278,7 @@ $(document).on("pagebeforeshow", function(event) {
 		$profile_name.html(data['profile_name']);
 	}
 });
+
+
 
 
