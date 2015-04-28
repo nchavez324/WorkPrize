@@ -98,9 +98,12 @@
         data_split = data[1].split('=');
         console.log(data_split);
 
-        var youre_awesome = data_split[2]; 
+        var youre_awesome = data_split[4]; 
+        console.log(youre_awesome);
         youre_awesome = decodeURIComponent(youre_awesome);
-
+        youre_awesome = youre_awesome.split('%');
+        youre_awesome = youre_awesome[0];
+        console.log(youre_awesome);
         $("#profile_name").text(youre_awesome);
         
         /*data = {}
@@ -154,7 +157,7 @@
 
      
         <br/> <br/>
-        <p class="center"> Talk to <span id="profile_name"> Bleh </span> to set up goals, timing, and rewards! Get pumped!</p>
+        <p class="center"> Talk to <span id="profile_name"> Andrew </span> to set up goals, timing, and rewards! Get pumped!</p>
         <br/> 
 
 
