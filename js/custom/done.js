@@ -240,6 +240,8 @@ function getTask() {
 
 
         $("#time").text(time);
+
+        $(".example").TimeCircles({time: {Days: false}, fg_width: 0.05, bg_width: 0.05});
 }
 
 
