@@ -20,87 +20,6 @@
     <script type="text/javascript" src="js/TimeCircles.js"></script>
     <link href="css/TimeCircles.css" rel="stylesheet">
     
-
-    <!-- this is only in file because jQuery doesn't seem to reload css -->
-    <style>
-
-    #textbox-icon {
-        position:absolute;
-        right:15px;
-        top:10px;
-    }
-
-    #reward-sel .ui-bar-a { 
-        background-image: linear-gradient( #fff, #f1f1f1 );
-
-        background-image: linear-gradient( #f9f9f9 , #eee );
-        border: none;
-        font-weight: bold;
-        color: #222;
-        text-shadow: none;
-
-    } 
-
-    #reward-sel .ui-bar-a :hover {
-        color: red;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    a {
-        text-decoration: none;
-    }
-    a.img{
-        padding-left: 1%;
-    }
-    </style>
-
-    <script>
-
-
-    function testing2() {
-
-        data = window.location.href.split('?');
-
-        if (data.length < 2) return;
-
-        data_split = data[1].split('=');
-        console.log(data_split);
-
-        var youre_awesome = data_split[4]; 
-        console.log(youre_awesome);
-        youre_awesome = decodeURIComponent(youre_awesome);
-        youre_awesome = youre_awesome.split('%');
-        youre_awesome = youre_awesome[0];
-        console.log(youre_awesome);
-        $("#profile_name").text(youre_awesome);
-        
-        /*data = {}
-        for (var i = data_split[2].length - 1; i >= 0; i--) {
-            s = data_split[i].split('=');
-            data[s[0]] = decodeURIComponent(s[1]);
-        };
-
-        var $profile_name = $(document).find('#request-profile-name');
-        console.log(data['profile_name']);
-        $profile_name.html(data['profile_name']);*/
-
-
-/*
-        $("#name").text("test");
-        var name = data['profile_name'];
-        alert(name); */
-
-        
-     
-    }
-    
-
-    window.onload = testing2;
-    </script>
-    
 </head>
 
 <body>
@@ -128,11 +47,11 @@
 
      
         <br/> <br/>
-        <p class="center"> Talk to <span id="profile_name"> Andrew </span> to set up goals, timing, and rewards! Get pumped!</p>
+        <p class="center-wrapper"> Talk to <span id="profile_name"> Andrew </span> to set up goals, timing, and rewards! Get pumped!</p>
         <br/> 
 
 
-        <div class="center">
+        <div class="center-wrapper">
         <a href="alerts.html" class="add-task left-more"> <span class="fui-plus"></span> + New Task...</a> </div>
         <br/> <br/>
         <div>

@@ -65,3 +65,31 @@
 .center-wrapper * {
   margin: 0 auto;
 }
+
+#textbox-icon {
+    position:absolute;
+    right:15px;
+    top:10px;
+}
+
+#reward-sel .ui-bar-a { 
+    background-image: linear-gradient( #fff, #f1f1f1 );
+
+    background-image: linear-gradient( #f9f9f9 , #eee );
+    border: none;
+    font-weight: bold;
+    color: #222;
+    text-shadow: none;
+
+} 
+
+#reward-sel .ui-bar-a :hover {
+    color: red;
+}
+
+a {
+    text-decoration: none;
+}
+a.img{
+    padding-left: 1%;
+}

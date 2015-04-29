@@ -281,6 +281,48 @@ $(document).on("pagebeforeshow", function(event) {
 	}
 });
 
+/***** BELINDA's CODE ****/
+
+    function testing2() {
+
+        data = window.location.href.split('?');
+
+        if (data.length < 2) return;
+
+        data_split = data[1].split('=');
+        console.log(data_split);
+
+        var youre_awesome = data_split[4]; 
+        console.log(youre_awesome);
+        youre_awesome = decodeURIComponent(youre_awesome);
+        youre_awesome = youre_awesome.split('%');
+        youre_awesome = youre_awesome[0];
+        console.log(youre_awesome);
+        $("#profile_name").text(youre_awesome);
+        
+        /*data = {}
+        for (var i = data_split[2].length - 1; i >= 0; i--) {
+            s = data_split[i].split('=');
+            data[s[0]] = decodeURIComponent(s[1]);
+        };
+
+        var $profile_name = $(document).find('#request-profile-name');
+        console.log(data['profile_name']);
+        $profile_name.html(data['profile_name']);*/
+
+
+/*
+        $("#name").text("test");
+        var name = data['profile_name'];
+        alert(name); */
+
+        
+     
+    }
+    
+
+    window.onload = testing2;
+
 
 
 
