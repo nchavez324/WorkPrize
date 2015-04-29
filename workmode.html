@@ -9,6 +9,9 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+    <script type="text/javascript" src="js/TimeCircles.js"></script>
+    <link href="css/TimeCircles.css" rel="stylesheet">
+
     <!-- all custom js -->
     <script src="js/custom/done.js"></script>
     <script src="js/custom/success.js"></script>
@@ -16,47 +19,12 @@
     <link rel="stylesheet" href="css/WorkPrize.css" />
     <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
 
-    <script type="text/javascript" src="js/TimeCircles.js"></script>
-    <link href="css/TimeCircles.css" rel="stylesheet">
-
-    <script>
     
-    
-    
-    window.onload = getTask;
-    </script>
 
     <!-- for the alerts. will separate out soon --> 
-    <script> 
 
-    function choiceAlert2() {
-        swal({   
-            title: "You sure you want to quit? ",   
-            text: "If so, you better give us a damn good reason",   
-            type: "input",   
-            showCancelButton: true,   
-            closeOnConfirm: false,   
-            animation: "slide-from-top" 
-        }, 
-        function(inputValue){   
-            if (inputValue === false) {
-                return false; 
-            }    
-            if (inputValue === "") {     
-                swal.showInputError("You need to write something!");     
-                return false   
-            }      
-            swal("Cancelled", "We've let your partner know that: " + inputValue, "error");
-            setTimeout(function () { window.location = "index.html";}, 5000);
-            
-        
-        });
-    }
-    
-</script>
-<script src="lib/sweet-alert.min.js"></script> 
-
-<link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
+    <script src="lib/sweet-alert.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 
 
 </head>
@@ -96,8 +64,8 @@
             <p id="time"></p>
             <br>
             <p> Only </p>
-            <!--<img src="img/timer.png">-->
-            <div class="example" data-timer="14400" data-inline="true"></div>
+
+            <div id="timer" data-timer="14400" data-inline="true"></div>
             <p> left to go! </p>
             <br>
             <p> Location: </p>
@@ -112,12 +80,12 @@
                 <li class="ui-body-inherit ui-li-has-thumb ui-first-child" id="header">
                     <!-- face, available -->
                     <div class="item-user-face" id="center-pic">
-                        <img src="img/user/face-0.png" class="user-face">
+                        <img id="work-user-face" src="img/user/face-0.png" class="user-face">
                     </div>
                     <!-- text -->
                     <div class="item-info">
                         <div class="item-text">
-                            <h1>Andrew Mauboussin</h1>
+                            <h1 id="work-profile-name">Andrew Mauboussin</h1>
                             <p>will reward you with</p>
                             <p id="reward"> </p>
                         </div>
@@ -195,7 +163,7 @@
             </div>
 
         <div class="center-wrapper">
-            <a href="#" data-role="button" data-inline="true" data-mini="true" onclick="choiceAlert2()">Abort</a>
+            <a href="#" data-role="button" data-inline="true" data-mini="true" onclick="abort()">Abort</a>
         </div>
 
     </div><!-- /page -->

@@ -193,55 +193,101 @@ function taskdetail(link) {
 		jQuery.mobile.changePage(link)
 }
 
-function testing() {
+function sendRequest(link) {
 	
-	var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-            //alert(hashes);
+	parameters = getUrlVars(window.location.href);
 
-    link = "taskdetail.html?" + encodeQueryData(hashes);
-    	jQuery.mobile.changePage(link)
+  link = addUrlVars("taskdetail.html", parameters);
 
-
-	/*{data = {'profile_name': name};
-
-    link = "taskdetail.html?" + encodeQueryData(data);
-
-    	jQuery.mobile.changePage(link) */
-
+  jQuery.mobile.changePage(link);
 }
 
-function getUrlVars()
-{
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    //alert(hashes);
+function finishDetail(button) {
 
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
+	parameters = getUrlVars(window.location.href);
+
+	//collect form values
+	var $detailTime = $('#detail-time');
+	var $detailLocation = $('#detail-location');
+	var $detailReward = $('#detail-reward');
+
+	parameters["time"] = $detailTime.val();
+	parameters["location"] = $detailLocation.val();
+	parameters["reward"] = $detailReward.val();
+
+  link = addUrlVars("workmode.html", parameters);
+
+  jQuery.mobile.changePage(link);
+}
+
+function getUrlVars(url) {
+    var vars = {};
+    var hashes = url.slice(url.indexOf('?') + 1).split('&');
+
+    for(var i = 0; i < hashes.length; i++) {
+        var hash = hashes[i].split('=');
+        vars[decodeURIComponent(hash[0])] = decodeURIComponent(hash[1]);
     }
     return vars;
 }
 
+function addUrlVars(url, parameters) {
+
+	var pUrl = url + "?";
+	for (var key in parameters) {
+		if (parameters.hasOwnProperty(key)) {
+
+			pUrl += encodeURIComponent(key) + "=" + encodeURIComponent(parameters[key]) + "&";
+		}
+	}
+	pUrl = pUrl.slice(0, pUrl.length - 1);
+	return pUrl;
+}
+
 function getTask() {
-	    var location = getUrlVars()["location"];
-        var location = location.replace(/\+/g, ' ');
+	var parameters = getUrlVars(window.location.href);
+  
+  var location = parameters["location"];
+  var reward = parameters["reward"];
+  var time = parameters["time"];
 
-        var reward = getUrlVars()["reward"];
-        var reward = reward.replace(/\+/g, ' ');
+  $("#location").html(location);
+  $("#reward").html(reward);
+  $("#time").html(time);
 
-        $("#location").text(location);
-        $("#reward").text(reward);
-        var time = getUrlVars()["time"];
-        var time= time.replace(/\+/g, ' ');
+  var $timer = $("#timer");
 
+  $timer.TimeCircles({time: {Days: false}, fg_width: 0.05, bg_width: 0.05});
+}
 
-        $("#time").text(time);
+function setReward(reward) {
 
-        $(".example").TimeCircles({time: {Days: false}, fg_width: 0.05, bg_width: 0.05});
+	var $rewardDetail = $("#detail-reward");
+	$rewardDetail.attr('value', reward);
+}
+
+function abort() {
+    swal({   
+        title: "You sure you want to quit? ",   
+        text: "If so, you better give us a damn good reason",   
+        type: "input",   
+        showCancelButton: true,   
+        closeOnConfirm: false,   
+        animation: "slide-from-top" 
+    }, 
+    function(inputValue){   
+        if (inputValue === false) {
+            return false; 
+        }    
+        if (inputValue === "") {     
+            swal.showInputError("You need to write something!");     
+            return false   
+        }      
+        swal("Cancelled", "We've let your partner know that: " + inputValue, "error");
+        setTimeout(function () { window.location = "index.html";}, 5000);
+        
+    
+    });
 }
 
 
@@ -262,67 +308,32 @@ $(document).on("pagebeforeshow", function(event) {
 	
 	if(activePage == 'request-page') {
 
-		data = window.location.href.split('?');
-
-		if (data.length < 2) return;
-
-		data_split = data[1].split('&');
-		data = {}
-		for (var i = data_split.length - 1; i >= 0; i--) {
-			s = data_split[i].split('=');
-			data[s[0]] = decodeURIComponent(s[1]);
-		};
+		data = getUrlVars(window.location.href);
 
 		var $profile_img = $(document).find('#request-user-face');
 		var $profile_name = $(document).find('#request-profile-name');
 
 		$profile_img.attr('src', data['profile_img']);
 		$profile_name.html(data['profile_name']);
+	
+	}else if(activePage == 'task-detail'){
+
+		data = getUrlVars(window.location.href);
+
+		var $profile_name = $(document).find('#profile-name');
+
+		$profile_name.html(data['profile_name']);
+
+	}else if(activePage == 'work-mode'){
+
+		data = getUrlVars(window.location.href);
+
+		var $profile_img = $(document).find('#work-user-face');
+		var $profile_name = $(document).find('#work-profile-name');
+
+		$profile_img.attr('src', data['profile_img']);
+		$profile_name.html(data['profile_name']);
+
+		getTask();
 	}
 });
-
-/***** BELINDA's CODE ****/
-
-    function testing2() {
-
-        data = window.location.href.split('?');
-
-        if (data.length < 2) return;
-
-        data_split = data[1].split('=');
-        console.log(data_split);
-
-        var youre_awesome = data_split[4]; 
-        console.log(youre_awesome);
-        youre_awesome = decodeURIComponent(youre_awesome);
-        youre_awesome = youre_awesome.split('%');
-        youre_awesome = youre_awesome[0];
-        console.log(youre_awesome);
-        $("#profile_name").text(youre_awesome);
-        
-        /*data = {}
-        for (var i = data_split[2].length - 1; i >= 0; i--) {
-            s = data_split[i].split('=');
-            data[s[0]] = decodeURIComponent(s[1]);
-        };
-
-        var $profile_name = $(document).find('#request-profile-name');
-        console.log(data['profile_name']);
-        $profile_name.html(data['profile_name']);*/
-
-
-/*
-        $("#name").text("test");
-        var name = data['profile_name'];
-        alert(name); */
-
-        
-     
-    }
-    
-
-    window.onload = testing2;
-
-
-
-

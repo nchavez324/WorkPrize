@@ -47,13 +47,9 @@
 
      
         <br/> <br/>
-        <p class="center-wrapper"> Talk to <span id="profile_name"> Andrew </span> to set up goals, timing, and rewards! Get pumped!</p>
+        <p class="center-wrapper"> Talk to <span id="profile-name"> Andrew </span> to set up goals, timing, and rewards! Get pumped!</p>
         <br/> 
 
-
-        <div class="center-wrapper">
-        <a href="newtask.html" class="add-task left-more"> <span class="fui-plus"></span> + New Task...</a> </div>
-        <br/> <br/>
         <div>
              <ul data-role="listview" id="feed-listview" class="ui-listview ui-shadow">
 
@@ -104,52 +100,51 @@
 
 
        <!-- form stuff -->
-       <form action="workmode.html" method="get" target="_blank">
-        <div data-role="fieldcontain">
-            <label for="name" > Time:</label>
-            <input type="text" placeholder="Enter a time" name="time" data-role="datebox" data-options='{"mode":"calbox"}'>
-            <img src="http://touristsocial.net/images/icons/calendar.png" width="15" id="textbox-icon" />
-        </div>  
-
+       <div> 
 
         <div data-role="fieldcontain">
-            <label for="name" > Location:</label>
-            <input class="placepicker form-control" type="text" name="location" placeholder="Enter a location" id="name" value=""  />
-            <img class="placepicker-map thumbnail" src=" https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQHxRYbRM67ejFa0vD3MitsoNMLHN-Akwv0xsJsk0VAkpKhzb5AYLLzWg" width="15" id="textbox-icon" />
-        </div>  
+            <label for="detail-time"> Time:</label>
+            <input id="detail-time" type="text" placeholder="Enter a time" name="time" value=""  />
+            <img src="http://touristsocial.net/images/icons/calendar.png" width="15" id="textbox-icon" onclick="" />
+        </div> 
+
+        <div data-role="fieldcontain">
+            <label for="detail-location"> Location:</label>
+            <input id="detail-location" type="text" placeholder="Enter a location" name="location" value=""  />
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQHxRYbRM67ejFa0vD3MitsoNMLHN-Akwv0xsJsk0VAkpKhzb5AYLLzWg" width="15" id="textbox-icon" onclick="" />
+        </div> 
 
 
         <div data-role="fieldcontain">
-            <label for="name"> Reward:</label>
-            <input type="text" placeholder="Type your own..." name="reward" id="possiblereward" value=""  />
-            <p id="possiblereward"> </p>
-            <img src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-down-01-128.png" width="15" id="textbox-icon" onclick="openReward()" />
+            <label for="detail-reward"> Reward:</label>
+            <input id="detail-reward" type="text" placeholder="Type your own..." name="reward" value=""  />
+            <img src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-down-01-128.png" width="15" id="textbox-icon" onclick="" />
         </div>  
         <div class="ui-grid-c" id="reward-sel">
-            <div class="ui-block-a"> <a href="#" id="dark-color" onclick="Cookies()">  
+            <div class="ui-block-a"> <a href="#" id="dark-color" onclick="setReward('Cookies')">  
                 <img src="img/cookie.png" height="40" width="40" style="margin-left:25px"/>
                 <div class="ui-bar ui-bar-a" id="red"style="height:30px"> Cookies </div> 
             </a>
             </div>
-            <div class="ui-block-b"> <a href="#" id="dark-color" onclick="Massage()"> 
+            <div class="ui-block-b"> <a href="#" id="dark-color" onclick="setReward('Back Massage')"> 
                 <img src="img/massage.png" height="40" width="40" style="margin-left:25px"s/>
                 <div class="ui-bar ui-bar-a" style="height:30px"> Back Massage </div>
             </a>
             </div>
-            <div class="ui-block-c"> <a href="#" id="dark-color" onclick="Tea()">  
+            <div class="ui-block-c"> <a href="#" id="dark-color" onclick="setReward('Tea')">  
                  <img src="img/tea.png" height="40" width="40"style="margin-left:25px"/>
                 <div class="ui-bar ui-bar-a" style="height:30px"> Tea </div>
             </a>
             </div>
-            <div class="ui-block-d"> <a href="#" id="dark-color" onclick="iceCream()">  
+            <div class="ui-block-d"> <a href="#" id="dark-color" onclick="setReward('Ice Cream')">  
                 <img src="img/icecream.png" height="40" width="40" style="margin-left:25px" />
-                <div class="ui-bar ui-bar-a" style="height:30px"> Ice cream </div>
+                <div class="ui-bar ui-bar-a" style="height:30px"> Ice Cream </div>
             </a>
             </div>
         </div><!-- /grid-c -->
 
-        <input type="submit" data-role="button" value="Create Task">
-    </form>
+        <button onclick="finishDetail(this)" data-rel="popup" data-position-to="window" data-role="button" data-transition="pop" aria-haspopup="true" aria-owns="popupDialog" aria-expanded="false" class="ui-link ui-btn ui-shadow ui-corner-all" role="button" data-theme="b">DONE!!</button>
+    </div>
     </div><!-- /page -->
         
     
